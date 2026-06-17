@@ -6,7 +6,7 @@
 import { OG_IMAGE } from './images.js';
 
 // Canonical production origin. Update on deploy; used for canonical + OG URLs.
-export const SITE_URL = 'https://pami.example.com';
+export const SITE_URL = 'https://pami.codagenz.com';
 export const SITE_NAME = 'Pami';
 
 const ogImageAbs = OG_IMAGE; // already an absolute https Unsplash URL

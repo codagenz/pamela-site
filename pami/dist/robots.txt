@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://pami.example.com/sitemap.xml

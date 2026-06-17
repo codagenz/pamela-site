@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+.vite-react-ssg-temp/
+.vite/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Env / local
+.env
+.env.local
+.env.*.local
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
