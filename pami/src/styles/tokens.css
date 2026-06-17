@@ -1,0 +1,85 @@
+/* ============================================================================
+   PAMI DESIGN TOKENS
+   Single source of truth for palette, type scale, spacing, radius, shadow.
+   Consumed by Tailwind (tailwind.config.js) and raw CSS alike.
+   Editorial / premium / restrained — no gradient fills.
+   ========================================================================== */
+:root {
+  /* --- Palette: warm editorial neutrals + a single clay accent --- */
+  --paper: #f6f3ee; /* page background */
+  --paper-2: #ece7df; /* alternating section background */
+  --ink: #16140f; /* primary text / near-black */
+  --ink-2: #6b655c; /* muted text */
+  --clay: #b5613d; /* single accent — links, small emphasis */
+  --clay-deep: #8c4a2f; /* accent hover / pressed */
+  --line: #dad3c8; /* hairline borders & dividers */
+
+  /* Per-collection accent hints — used sparingly, never as fills */
+  --glow-accent: #c98a86; /* blush */
+  --style-accent: #2c2a25; /* ink-leaning */
+  --corner-accent: #c98a2e; /* citrus */
+
+  /* --- Fluid modular type scale (~1.25 ratio), clamped --- */
+  --step--1: clamp(0.8rem, 0.77rem + 0.15vw, 0.89rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.25rem, 1.18rem + 0.34vw, 1.5rem);
+  --step-2: clamp(1.56rem, 1.45rem + 0.57vw, 2rem);
+  --step-3: clamp(1.95rem, 1.77rem + 0.9vw, 2.66rem);
+  --step-4: clamp(2.44rem, 2.16rem + 1.39vw, 3.55rem);
+  --step-5: clamp(3.05rem, 2.62rem + 2.15vw, 4.74rem);
+  --step-6: clamp(3.81rem, 3.16rem + 3.26vw, 6.31rem);
+
+  /* --- Spacing (4px base) --- */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --gutter: clamp(1.25rem, 0.8rem + 2.2vw, 3rem);
+  --section-y: clamp(4rem, 2.8rem + 6vw, 8.5rem);
+
+  /* --- Radius --- */
+  --r-sm: 4px;
+  --r-md: 10px;
+  --r-lg: 18px;
+  --r-pill: 999px;
+
+  /* --- Shadow: restrained, no glow --- */
+  --shadow-1: 0 1px 2px rgba(22, 20, 15, 0.04), 0 6px 18px rgba(22, 20, 15, 0.05);
+  --shadow-2: 0 4px 10px rgba(22, 20, 15, 0.08), 0 18px 40px rgba(22, 20, 15, 0.1);
+}
+
+/* ----------------------------------------------------------------------------
+   DARK THEME — toggled by `.dark` on <html>. Only the palette flips; the type
+   scale, spacing, radius and the rest stay identical, so every component that
+   uses the colour tokens adapts automatically. Light is the default (:root).
+   -------------------------------------------------------------------------- */
+.dark {
+  --paper: #14130f; /* warm near-black page background */
+  --paper-2: #1f1d17; /* alternating section background */
+  --ink: #f3efe7; /* primary text (now light) */
+  --ink-2: #a8a094; /* muted text */
+  --clay: #d6885f; /* accent lifted for contrast on dark */
+  --clay-deep: #c4633f; /* accent hover / pressed */
+  --line: #352f27; /* hairline borders & dividers */
+
+  /* Per-collection accent hints, nudged for legibility on dark */
+  --glow-accent: #d8a39f;
+  --style-accent: #c9c3b8;
+  --corner-accent: #dca84a;
+
+  /* Elevation needs darker, more spread shadows to read on a dark surface */
+  --shadow-1: 0 1px 2px rgba(0, 0, 0, 0.4), 0 6px 18px rgba(0, 0, 0, 0.45);
+  --shadow-2: 0 4px 10px rgba(0, 0, 0, 0.5), 0 18px 44px rgba(0, 0, 0, 0.55);
+}
+
+/* Smooth the theme switch (disabled under reduced-motion via globals.css) */
+:root {
+  color-scheme: light;
+}
+.dark {
+  color-scheme: dark;
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta name="theme-color" content="#16140f" />
+    <!-- No-flash theme: apply the persisted choice before first paint.
+         Light is the default, so we only add `.dark` when explicitly stored. -->
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem('pami-theme') === 'dark') {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
+    <!-- Per-route <head> tags are injected by react-helmet-async during SSG -->
+  </head>
+  <body>
+    <div id="root"><!--app-html--></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
